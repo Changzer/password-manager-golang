@@ -20,6 +20,7 @@ func main() {
 	r.Delete("/{id}", handlers.Delete)
 	r.Get("/{id}", handlers.Get)
 	r.Get("/", handlers.List)
+	r.Get("/done", handlers.GetByDone)
 
 	http.ListenAndServe(fmt.Sprintf(":%s", configs.GetServerPort()), r)
 }
